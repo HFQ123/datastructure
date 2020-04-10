@@ -11,6 +11,7 @@ import java.util.Comparator;
  * @return:
  */
 public class Main {
+
     /**
      * Integer类已经内置实现Comparable接口
      */
@@ -52,7 +53,7 @@ public class Main {
     }
 
     /**
-     * 测试遍历接口
+     * 测试遍历操作
      */
     static void test4(){
         Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
@@ -65,26 +66,41 @@ public class Main {
         binarySearchTree.inorderTraversal();
         binarySearchTree.postorderTraversal();
         binarySearchTree.leavelOrderTraversal();
-        binarySearchTree.leavelOrderTraversal(new MyVisit());
-        binarySearchTree.leavelOrderTraversal(new Visitor() {
-            @Override
-            public void visit(Object element) {
-                //do nothing;
-            }
-        });
     }
-    private static class MyVisit implements Visitor{
+
+    private static class PrintVisitor implements Visitor{
 
         @Override
         public void visit(Object element) {
-            System.out.println("动态地遍历"+element);
+            System.out.printf("_"+element+"_");
         }
     }
+    /**
+     * 测试含有遍历操作接口的遍历操作
+     */
+    static void test5(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        System.out.println();
+        binarySearchTree.preorderTraversal(new PrintVisitor());
+        System.out.println();
+        binarySearchTree.inorderTraversal(new PrintVisitor());
+        System.out.println();
+        binarySearchTree.postorderTraversal(new PrintVisitor());
+        System.out.println();
+        binarySearchTree.leavelOrderTraversal(new PrintVisitor());
+    }
+
+
 
     public static void main(String[] args) {
-        test1();
-        test2();
-        test3();
-        test4();
+//        test1();
+//        test2();
+//        test3();
+        test5();
     }
 }

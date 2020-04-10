@@ -114,6 +114,23 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
         this.comparator = comparator;
     }
 
+
+
+
+
+
+
+    /**
+     * 待补充！！！二叉树前序遍历的非递归写法
+     */
+    public void preorderTraversal2(){
+
+    }
+
+    /**
+     * =========================以下遍历方法未指定遍历操作接口，遍历操作时操作打印元素=========================
+     */
+
     /**
      * 二叉树前序遍历的递归写法
      */
@@ -128,13 +145,6 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
         System.out.printf(node.element+",");
         preorderTraversal(node.left);
         preorderTraversal(node.right);
-    }
-
-    /**
-     * 待补充！！！二叉树前序遍历的非递归写法
-     */
-    public void preorderTraversal2(){
-
     }
 
     /**
@@ -193,15 +203,75 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
         }
     }
 
+
+
+
     /**
-     * 带遍历操作接口的层序遍历方法
-     * @param visitor
+     * =========================以下遍历方法实现了遍历操作接口=========================
      */
-    public void leavelOrderTraversal(Visitor visitor){
-        if(root == null){
+
+    /**
+     * 二叉树前序遍历-递归实现
+     * @param visitor 遍历操作接口，定义了遍历时要做的操作
+     */
+    public void preorderTraversal(Visitor visitor){
+        preorder(root,visitor);
+    }
+
+    private void preorder(Node<E> node, Visitor visitor) {
+        if(node == null || visitor == null){
             return;
         }
-        System.out.printf("层序遍历结果:");
+        visitor.visit(node.element);
+        preorder(node.left,visitor);
+        preorder(node.right,visitor);
+
+    }
+
+    /**
+     * 二叉树中序遍历-递归实现
+     * @param visitor 遍历操作接口，定义了遍历时要做的操作
+     */
+    public void inorderTraversal(Visitor visitor){
+        inorder(root,visitor);
+    }
+
+    private void inorder(Node<E> node, Visitor visitor) {
+        if(node == null || visitor == null){
+            return;
+        }
+        inorder(node.left,visitor);
+        visitor.visit(node.element);
+        inorder(node.right,visitor);
+
+    }
+
+    /**
+     * 二叉树后序遍历-递归实现
+     * @param visitor 遍历操作接口，定义了遍历时要做的操作
+     */
+    public void postorderTraversal(Visitor visitor){
+        postorder(root,visitor);
+    }
+
+    private void postorder(Node<E> node, Visitor visitor) {
+        if(node == null || visitor == null){
+            return;
+        }
+        postorder(node.left,visitor);
+        postorder(node.right,visitor);
+        visitor.visit(node.element);
+
+    }
+
+    /**
+     * 二叉树层序遍历-队列实现
+     * @param visitor 遍历操作接口，定义了遍历时要做的操作
+     */
+    public void leavelOrderTraversal(Visitor visitor){
+        if(root == null || visitor == null){
+            return;
+        }
         Queue <Node <E>> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()){

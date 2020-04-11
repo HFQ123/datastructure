@@ -68,12 +68,17 @@ public class Main {
         binarySearchTree.leavelOrderTraversal();
     }
 
-    private static class PrintVisitor implements Visitor{
+    private static class PrintVisitor  implements Visitor {
 
         @Override
-        public void visit(Object element) {
+        public boolean visit(Object element) {
             System.out.printf("_"+element+"_");
+            if ((int)element==2){       //遍历到2的时候就不用遍历了
+                return true;
+            }
+            return false;
         }
+
     }
     /**
      * 测试含有遍历操作接口的遍历操作
@@ -95,12 +100,124 @@ public class Main {
         binarySearchTree.leavelOrderTraversal(new PrintVisitor());
     }
 
+    /**
+     * 测试使用前序遍历自定义的树状打印二叉树方法（覆盖了toString）
+     */
+    static void test6(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        System.out.println();
+        System.out.println(binarySearchTree);
+    }
+
+    /**
+     * 测试计算二叉树高度
+     */
+    static void test7(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        System.out.println("递归法计算二叉树高度:"+binarySearchTree.height());
+        System.out.println("迭代法计算二叉树高度:"+binarySearchTree.height2());
+    }
+
+    /**
+     * 测试判断完全二叉树
+     */
+    static void test8(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        Integer data1[] = new Integer[]{9,7,10,6};
+
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+
+        BinarySearchTree <Integer> binarySearchTree1 = new BinarySearchTree();
+        for(int i = 0; i<data1.length; i++){
+            binarySearchTree1.add(data1[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        BinaryTrees.println(binarySearchTree1);
+        System.out.println("树1是否完全二叉树:"+binarySearchTree.isComplete());
+        System.out.println("树2是否完全二叉树:"+binarySearchTree1.isComplete());
+    }
+
+
+    /**
+     * 测试前驱结点和后继结点
+     */
+    static void test9(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.inorderTraversal();
+//        binarySearchTree.predecessor();
+//        binarySearchTree.successor();
+        //这里没有访问接口,可以考虑遍历的时候一个个打印验证，已经验证过是正确的
+    }
+
+    /**
+     * 测试remove方法
+     */
+    static void test10(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.inorderTraversal();
+        //测试删除度为0节点
+        binarySearchTree.remove(1);
+        binarySearchTree.remove(3);
+        binarySearchTree.remove(12);
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.inorderTraversal();
+
+        //测试删除度为1节点
+        binarySearchTree.remove(11);
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.inorderTraversal();
+
+        //测试删除度为2节点
+        binarySearchTree.remove(7);
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.inorderTraversal();
+
+        //测试删除度为2节点
+        binarySearchTree.remove(4);
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.inorderTraversal();
+
+
+    }
+
+
+
+
+
 
 
     public static void main(String[] args) {
 //        test1();
 //        test2();
 //        test3();
-        test5();
+//        test5();
+//        test6();
+//        test7();
+//        test8();
+////      test9();
+          test10();
     }
 }

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="805bb210-a49d-40df-9103-926889096c9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/BinarySearchTree$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/BinarySearchTree$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/BinarySearchTree$Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/BinarySearchTree$Visitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/BinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/BinarySearchTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main$MyVisit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main$PrintVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main$PrintVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/datastructure/com/hfq/bst/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hfq/bst/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hfq/bst/Main.java" afterDir="false" />
@@ -39,21 +38,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="335" column="7" lean-forward="true" selection-start-line="335" selection-start-column="7" selection-end-line="335" selection-end-column="7" />
+            <state relative-caret-position="647">
+              <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2406#2407#0" expanded="true" />
-                <element signature="e#2438#2439#0" expanded="true" />
-                <element signature="e#2831#2832#0" expanded="true" />
-                <element signature="e#2878#2879#0" expanded="true" />
-                <element signature="e#3311#3312#0" expanded="true" />
-                <element signature="e#3358#3359#0" expanded="true" />
-                <element signature="e#3760#3761#0" expanded="true" />
-                <element signature="e#3806#3807#0" expanded="true" />
-                <element signature="e#7066#7067#0" expanded="true" />
-                <element signature="e#7159#7160#0" expanded="true" />
-                <element signature="e#7254#7255#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#899#900#0" expanded="true" />
+                <element signature="e#4784#4785#0" expanded="true" />
+                <element signature="e#4887#4888#0" expanded="true" />
+                <element signature="e#10832#10833#0" expanded="true" />
+                <element signature="e#10867#10868#0" expanded="true" />
+                <element signature="e#14162#14163#0" expanded="true" />
+                <element signature="e#14255#14256#0" expanded="true" />
+                <element signature="e#14350#14351#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/hfq/bst/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="198" column="33" selection-start-line="198" selection-start-column="33" selection-end-line="198" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1418#1419#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,25 +75,9 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="42">
-                <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="32" />
+                <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/hfq/bst/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-70">
-              <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1350#1351#0" expanded="true" />
-                <element signature="e#1418#1419#0" expanded="true" />
-                <element signature="e#2369#2370#0" expanded="true" />
-                <element signature="e#2427#2428#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -98,12 +93,28 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Node</find>
       <find>compare</find>
       <find>nODE</find>
       <find>vIS</find>
-      <find>层</find>
       <find>Visitor</find>
+      <find>遍历</find>
+      <find>if</find>
+      <find>visit</find>
+      <find>visitor.visit</find>
+      <find>height2</find>
+      <find>层</find>
+      <find>isC</find>
+      <find>class</find>
+      <find>leafC</find>
+      <find>Node</find>
+      <find>clas</find>
+      <find>getP</find>
+      <find>preor</find>
+      <find>preorder</find>
+      <find>predec</find>
+      <find>prede</find>
+      <find>succ</find>
+      <find>pred</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,8 +128,8 @@
         <option value="$PROJECT_DIR$/src/com/hfq/bst/printer/Printer.java" />
         <option value="$PROJECT_DIR$/src/com/hfq/bst/Person.java" />
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java" />
         <option value="$PROJECT_DIR$/src/com/hfq/bst/Main.java" />
       </list>
     </option>
@@ -130,8 +141,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="782" />
-    <option name="y" value="140" />
+    <option name="x" value="605" />
+    <option name="y" value="178" />
     <option name="width" value="785" />
     <option name="height" value="835" />
   </component>
@@ -187,7 +198,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586541112972" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586622547785" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -265,19 +276,20 @@
       <workItem from="1586308957876" duration="24000" />
       <workItem from="1586434206168" duration="4450000" />
       <workItem from="1586491078705" duration="21482000" />
-      <workItem from="1586538667893" duration="2523000" />
+      <workItem from="1586538667893" duration="3753000" />
+      <workItem from="1586586469161" duration="16945000" />
+      <workItem from="1586622609087" duration="1892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35492000" />
+    <option name="totallyTimeSpent" value="55559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.30590716" visible="true" weight="0.211126" />
-      <window_info id="Structure" order="1" sideWeight="0.6934461" side_tool="true" weight="0.20375335" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.30590716" weight="0.44121715" />
+      <window_info id="Structure" order="1" sideWeight="0.6934461" side_tool="true" visible="true" weight="0.2989276" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -285,17 +297,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37393767" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4526167" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39518413" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44617563" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32808024" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32956153" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32808024" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -446,47 +458,43 @@
     <entry file="file://$PROJECT_DIR$/datastructure.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#4784#4785#0" expanded="true" />
+            <element signature="e#4887#4888#0" expanded="true" />
+            <element signature="e#10832#10833#0" expanded="true" />
+            <element signature="e#10867#10868#0" expanded="true" />
+            <element signature="e#14162#14163#0" expanded="true" />
+            <element signature="e#14255#14256#0" expanded="true" />
+            <element signature="e#14350#14351#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="42">
-            <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="32" />
+            <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hfq/bst/BinarySearchTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="335" column="7" lean-forward="true" selection-start-line="335" selection-start-column="7" selection-end-line="335" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2406#2407#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2831#2832#0" expanded="true" />
-            <element signature="e#2878#2879#0" expanded="true" />
-            <element signature="e#3311#3312#0" expanded="true" />
-            <element signature="e#3358#3359#0" expanded="true" />
-            <element signature="e#3760#3761#0" expanded="true" />
-            <element signature="e#3806#3807#0" expanded="true" />
-            <element signature="e#7066#7067#0" expanded="true" />
-            <element signature="e#7159#7160#0" expanded="true" />
-            <element signature="e#7254#7255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hfq/bst/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
-          <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
+        <state relative-caret-position="55">
+          <caret line="198" column="33" selection-start-line="198" selection-start-column="33" selection-end-line="198" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1350#1351#0" expanded="true" />
             <element signature="e#1418#1419#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -93,9 +93,8 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
      * @param node
      */
     private void remove(Node <E> node){
-        if(node == null)
-            return;
-//        Node del = null;    //标记要删除的节点
+        if(node == null) return;
+
         if(node.hasTwoChildren()){  //度为2
             Node <E> s = successor(node);
             node.element = s.element;
@@ -106,7 +105,7 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
         {
             if(node == root){ //当node.parent=null，也就是说如果要删除的是根节点，作后面的if判断访问null.left会出错，所以作为特殊情况
                 root = null;
-                return;
+//                return;
             }
             else if(node == node.parent.left){
                 node.parent.left = null;
@@ -120,7 +119,7 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
             if(node == root){ //等价于node.parent=null
                 root = child;
                 child.parent = null;
-                return;
+//                return;
             }
             else if(node == node.parent.left){ //删除节点是父节点的左节点
                 node.parent.left = child;
@@ -131,6 +130,9 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
                 child.parent = node.parent;
             }
         }
+
+        //删除节点之后的处理
+        afterRemove(node);
 
     }
 
@@ -158,10 +160,18 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
     }
 
     /**
-     * /添加节点后的处理，在BST中什么都不用做，在子类AVLTree中需要判断是否失衡如果是则需恢复平衡
+     * 添加节点后的处理，在BST中什么都不用做，在子类AVLTree中需要判断是否失衡如果是则需恢复平衡
      * @param node
      */
     protected void afterAdd(Node node){
+
+    }
+
+    /**
+     * 删除节点后的处理，在BST中什么都不用做，在子类AVLTree中
+     * @param node 被删除的节点
+     */
+    protected void afterRemove(Node node){
 
     }
 
@@ -473,6 +483,15 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
         public boolean hasTwoChildren(){
             return this.left != null && this.right != null;
         }
+
+        @Override
+        public String toString() {
+            String parentElement = "null";
+            if(parent!=null){
+                parentElement = parent.element.toString();
+            }
+            return element+"_p("+parentElement+")"; //打印节点值和它的父节点值
+        }
     }
 
     /**
@@ -656,12 +675,15 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
 
     @Override
     public Object string(Object node) {
-        String parentElement = "null";
-        if(((Node)node).parent!=null){
-            parentElement = (((Node)node).parent.element).toString();
-        }
-        return ((Node)node).element+"_"+parentElement; //打印节点值和它的父节点值
+//        String parentElement = "null";
+//        if(((Node)node).parent!=null){
+//            parentElement = (((Node)node).parent.element).toString();
+//        }
+//        return ((Node)node).element+"_p("+parentElement; //打印节点值和它的父节点值
+        return node.toString();
     }
+
+
 
 
     /**

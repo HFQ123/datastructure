@@ -2,10 +2,10 @@ package com.hfq.bst;
 
 import com.hfq.bst.printer.BinaryTreeInfo;
 
-import javax.xml.bind.Element;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @Created by hfq on 2020/4/10 13:57
@@ -15,10 +15,16 @@ import java.util.Queue;
 public class BinarySearchTree <E>  implements BinaryTreeInfo {
 
 
-    private int size;       //元素的个数
-    private Node<E> root;   //根节点
-    private Comparator<E> comparator; //比较器，添加元素时要比较元素大小
+     int size;       //元素的个数
+     Node<E> root;   //根节点
+     Comparator<E> comparator; //比较器，添加元素时要比较元素大小
 
+    public BinarySearchTree(Comparator<E> comparator) {
+        this.comparator = comparator;
+    }
+
+    public BinarySearchTree() {
+    }
 
     /**
      *
@@ -42,6 +48,24 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
     public void clear(){
         root=null;
         size=0;
+    }
+    public void test(){
+        Node p = root;
+        Node parent = root;
+        while (p!=null){
+            parent = p;
+            p=p.left;
+        }
+        inorder(parent,null,parent.right);
+    }
+
+    public  Node inorder(Node root,Node front,Node next){
+        if(root==null)
+            return null;
+        root.left=inorder(root.left,front,next);
+        root.right=inorder(root.right,front,next);
+        System.out.println(root.left+","+root.right);
+        return root;
     }
 
     /**
@@ -133,8 +157,21 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
         return null;
     }
 
+    /**
+     * /添加节点后的处理，在BST中什么都不用做，在子类AVLTree中需要判断是否失衡如果是则需恢复平衡
+     * @param node
+     */
+    protected void afterAdd(Node node){
+
+    }
 
 
+    /**
+     * 用于不同的二叉搜索树创建节点，如普通BST、AVL
+     */
+    protected Node createNode(E element,Node <E> parent){
+        return new Node<>(element,parent);
+    }
 
     /**
      * 添加元素到BST中
@@ -143,8 +180,9 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
     public void add(E element){
         elementNotNullCheck(element);     //因为元素需要具有可比较性，所以不能为空
         if(root==null){     //当前插入的结点是第一个结点
-            root = new Node<>(element,null);
+            root = createNode(element,null);
             size++;
+            afterAdd(root);
             return;
         }
 
@@ -165,13 +203,14 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
             }
         }
         //退出循环时，p必定是空，且p的父节点就是要插入的结点的父节点
-        Node<E> newNode = new Node<>(element,parent);
+        Node<E> newNode = createNode(element,parent);
         if(cmp>0){      //最后一次比较结果
             parent.right = newNode;
         }else if(cmp<0) {
             parent.left = newNode;
         }
         size++;
+        afterAdd(newNode);
     }
 
     /**
@@ -216,6 +255,27 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
      * 待补充！！！二叉树前序遍历的非递归写法
      */
     public void preorderTraversal2(){
+        Stack <Node> stack = new Stack<>();
+        Node p = root;
+        while (p!=null){
+            System.out.printf(p.element+",");
+            if(p.right!=null){
+                stack.push(p.right);
+            }
+            p=p.left;
+        }
+
+        while(!stack.isEmpty()){
+            p = stack.pop();
+            while (p!=null){
+                System.out.printf(p.element+",");
+                if(p.right!=null){
+                    stack.push(p.right);
+                }
+                p=p.left;
+            }
+        }
+        return;
 
     }
 
@@ -394,7 +454,7 @@ public class BinarySearchTree <E>  implements BinaryTreeInfo {
      * 内部类，二叉树结点
      * @param <E> 泛型
      */
-    private static class Node<E>{
+    protected static class Node<E>{
         E element;
         Node <E> left;
         Node <E> right;

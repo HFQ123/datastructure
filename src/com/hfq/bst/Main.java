@@ -203,6 +203,22 @@ public class Main {
 
     }
 
+    /**
+     * 测试非递归的前序遍历方法preorderTraversal2
+     * @param
+     */
+    static void test11(){
+        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+        for(int i = 0; i<data.length; i++){
+            binarySearchTree.add(data[i]);
+        }
+        BinaryTrees.println(binarySearchTree);
+        binarySearchTree.preorderTraversal();
+        binarySearchTree.preorderTraversal2();
+
+    }
+
 
 
 
@@ -210,14 +226,22 @@ public class Main {
 
 
     public static void main(String[] args) {
-//        test1();
-//        test2();
-//        test3();
-//        test5();
-//        test6();
-//        test7();
-//        test8();
+        test1();
+        test2();
+        test3();
+        test5();
+        test6();
+        test7();
+        test8();
 ////      test9();
-          test10();
+//          test10();
+//        Integer data[] = new Integer[]{7,4,2,1,3,5,9,8,11,10,12};
+//        BinarySearchTree <Integer> binarySearchTree = new BinarySearchTree();
+//        for(int i = 0; i<data.length; i++){
+//            binarySearchTree.add(data[i]);
+//        }
+//        BinaryTrees.println(binarySearchTree);
+//        binarySearchTree.test();
+        test11();
     }
 }
